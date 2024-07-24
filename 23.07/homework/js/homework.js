@@ -5,7 +5,7 @@ console.log(`firstname: ${firstName}`);
 let lastName = "moshe";
 console.log(`lastname: ${lastName}`);
 
-let age = 17;
+let age = 21;
 console.log(`age: ${age}`);
 
 let isStudent = true;
@@ -135,3 +135,65 @@ function validateLogin(username, password) {
 let result = validateLogin("Aviel123", "123Aviel");
 console.log(result);
 //task 8
+
+
+
+function extractInitials (firstName,lastName){
+let firstLetter = firstName.at(0);
+let lastLetter = lastName.at(0);
+let extract=(firstLetter+"."+lastLetter)
+return extract.toUpperCase()
+}
+let Upper = extractInitials(firstName,lastName)
+console.log(Upper)
+
+// // task 9
+
+
+function maskEmail(email){
+    let sp =email.split("@")
+let first =sp[0]
+let end =sp[1]
+let firstMask = first.replace(first,"******")
+return (firstMask+"@"+end)
+}
+let emailMask= maskEmail("aviel@gmail.com")
+console.log(emailMask)
+//task 10
+
+function  gradeCalculator(score){
+  if (score>=90){
+        console.log("A")
+    }
+    else if (score>=80){
+        console.log("B")
+ 
+    }
+    else if (score>=70){
+        console.log("C")
+ 
+    }
+    else if (score>=60){
+        console.log("D")
+ 
+    }
+    else {
+        console.log("F")
+ 
+    }
+}
+gradeCalculator(85)
+
+//task 11
+
+function canVote(age,isCitizen){
+    if (age>=18&&isCitizen)console.log("You are eligible to vote.")
+        else console.log("You are not eligible to vote.")
+}
+canVote(age,true)
+//task 12
+// String and Number Conversion:
+// Write a function named convertToUpperCaseAndAddAge that takes two parameters, name and age.
+// Inside the function, use the toUpperCase method to convert the name to uppercase.
+// Convert the age to a string and concatenate it with the uppercase name.
+// Return the resulting string, like "JOHN25".
