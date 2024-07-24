@@ -136,64 +136,75 @@ let result = validateLogin("Aviel123", "123Aviel");
 console.log(result);
 //task 8
 
-
-
-function extractInitials (firstName,lastName){
-let firstLetter = firstName.at(0);
-let lastLetter = lastName.at(0);
-let extract=(firstLetter+"."+lastLetter)
-return extract.toUpperCase()
+function extractInitials(firstName, lastName) {
+  let firstLetter = firstName.at(0);
+  let lastLetter = lastName.at(0);
+  let extract = firstLetter + "." + lastLetter;
+  return extract.toUpperCase();
 }
-let Upper = extractInitials(firstName,lastName)
-console.log(Upper)
+let Upper = extractInitials(firstName, lastName);
+console.log(Upper);
 
 // // task 9
 
-
-function maskEmail(email){
-    let sp =email.split("@")
-let first =sp[0]
-let end =sp[1]
-let firstMask = first.replace(first,"******")
-return (firstMask+"@"+end)
+function maskEmail(email) {
+  let sp = email.split("@");
+  let first = sp[0];
+  let end = sp[1];
+  let firstMask = first.replace(first, "******");
+  return firstMask + "@" + end;
 }
-let emailMask= maskEmail("aviel@gmail.com")
-console.log(emailMask)
+let emailMask = maskEmail("aviel@gmail.com");
+console.log(emailMask);
 //task 10
 
-function  gradeCalculator(score){
-  if (score>=90){
-        console.log("A")
-    }
-    else if (score>=80){
-        console.log("B")
- 
-    }
-    else if (score>=70){
-        console.log("C")
- 
-    }
-    else if (score>=60){
-        console.log("D")
- 
-    }
-    else {
-        console.log("F")
- 
-    }
+function gradeCalculator(score) {
+  if (score >= 90) {
+    console.log("A");
+  } else if (score >= 80) {
+    console.log("B");
+  } else if (score >= 70) {
+    console.log("C");
+  } else if (score >= 60) {
+    console.log("D");
+  } else {
+    console.log("F");
+  }
 }
-gradeCalculator(85)
+gradeCalculator(85);
 
 //task 11
 
-function canVote(age,isCitizen){
-    if (age>=18&&isCitizen)console.log("You are eligible to vote.")
-        else console.log("You are not eligible to vote.")
+function canVote(age, isCitizen) {
+  if (age >= 18 && isCitizen) console.log("You are eligible to vote.");
+  else console.log("You are not eligible to vote.");
 }
-canVote(age,true)
+canVote(age, true);
 //task 12
-// String and Number Conversion:
-// Write a function named convertToUpperCaseAndAddAge that takes two parameters, name and age.
-// Inside the function, use the toUpperCase method to convert the name to uppercase.
-// Convert the age to a string and concatenate it with the uppercase name.
-// Return the resulting string, like "JOHN25".
+
+function convertToUpperCaseAndAddAge(name, age) {
+  let big = name.toUpperCase();
+  let ageS = age.toString();
+  console.log(big + ageS);
+}
+convertToUpperCaseAndAddAge("aviel", age);
+
+// /task 14
+
+function capitalize(word) {
+  let result = word.at([0]);
+  let bigL = result.toUpperCase();
+  let rest = word.substring(1);
+  console.log(bigL + rest);
+}
+capitalize("moshe");
+
+//task 15
+// Write a function named containsSubstring that takes two parameters, mainString and subString.
+// Inside the function, check if mainString contains subString.
+// Return true if it does, otherwise return false.
+
+function containsSubstring(mainString, subString) {
+  console.log(mainString.includes(subString));
+}
+containsSubstring("i learn in IITC", "learn");
