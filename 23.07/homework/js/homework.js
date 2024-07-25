@@ -197,7 +197,7 @@ function capitalize(word) {
   let rest = word.substring(1);
   console.log(bigL + rest);
 }
-capitalize("moshe");
+capitalize("izmailov");
 
 //task 15
 
