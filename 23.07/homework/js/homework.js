@@ -205,4 +205,4 @@ capitalize("moshe");
 function containsSubstring(mainString, subString) {
   console.log(mainString.includes(subString));
 }
-containsSubstring("i learn in IITC", "lean");
+containsSubstring("i learn in IITC", "learn");
