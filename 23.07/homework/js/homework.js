@@ -200,11 +200,9 @@ function capitalize(word) {
 capitalize("moshe");
 
 //task 15
-// Write a function named containsSubstring that takes two parameters, mainString and subString.
-// Inside the function, check if mainString contains subString.
-// Return true if it does, otherwise return false.
+
 
 function containsSubstring(mainString, subString) {
   console.log(mainString.includes(subString));
 }
-containsSubstring("i learn in IITC", "learn");
+containsSubstring("i learn in IITC", "lean");
