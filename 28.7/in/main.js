@@ -15,8 +15,30 @@ console.log(sum);
 
 // 4
 for (let i = 1; i <= 10; i++) {
-  console.log(i*5);
+  console.log(i * 5);
 }
-text="*"
+text = "*";
 for (let i = 1; i <= 5; i++) {
-  console.log((text.repeat(i)));}
+  console.log(text.repeat(i));
+}
+
+// 2
+let num = 1;
+while (num <= 100) {
+  console.log(num);
+  num = num * 2;
+}
+// 1 do while
+num = 1;
+
+do {
+  console.log(num);
+  i++;
+} while (i <= 5);
+// 3
+
+let doyou;
+let dont = "no";
+do {
+  doyou = prompt("Do you want to play agin?");
+} while (doyou !== dont);
