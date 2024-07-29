@@ -212,7 +212,6 @@ function reverseArray(arr) {
 
   return reversedArray;
 }
-
 console.log(colors);
 console.log(reverseArray(colors));
 // 66
@@ -220,3 +219,33 @@ fruits[2] = "aviel";
 console.log(fruits);
 console.log(fruits.sort());
 // 67
+console.log(
+  numbers.sort(function (a, b) {
+    return a - b;
+  })
+);
+// 68
+console.log(
+  numbers.sort(function (a, b) {
+    return b - a;
+  })
+);
+// 69
+let words = ["aviel", "roei", "batel", "rafi"];
+a = words.length;
+console.log(words.sort());
+// 70
+
+// 71
+function printColor(color) {
+  console.log(color);
+}
+
+colors.forEach(printColor);
+// 72
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+function double(num) {
+  console.log(num * 2);
+}
+numbers.forEach(double);
+// 73
