@@ -1,5 +1,5 @@
 let balance = 20000;
-let pinCode = "1234";
+let pinCode = "3008";
 const maxWithdrawal = 10000;
 let conter = 0;
 
