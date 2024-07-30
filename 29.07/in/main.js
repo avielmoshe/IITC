@@ -25,3 +25,39 @@ function countCharInArray(strs, char) {
 }
 let names = ["sasha", "omer", "sason", "shai"];
 countCharInArray(names, "a");
+
+function sumInArray(num) {
+  let sum = 0;
+  for (let i = 0; i < num.length; i++) {
+    count += num[i];
+  }
+  console.log(count);
+}
+
+let numbers = [1, 2, 3, 4];
+sumInArray(numbers);
+
+function sumNestedNumbersArray(NestedNumbers) {
+  let sum = 0;
+  for (let i = 0; i < NestedNumbers.length; i++) {
+    for (let j = 0; j < NestedNumbers[i].length; j++) {
+      sum += NestedNumbers[i][j];
+    }
+  }
+  console.log(sum);
+}
+
+let nestedArry = [[5, 2], [3, 20, 10], [1]];
+sumNestedNumbersArray(nestedArry);
+
+function makeMultTable() {
+  for (let i = 1; i <= 5; i++) {
+    let row = "";
+    for (let j = 1; j <= 5; j++) {
+      row += i * j + " ";
+    }
+    console.log(row);
+  }
+}
+
+makeMultTable();

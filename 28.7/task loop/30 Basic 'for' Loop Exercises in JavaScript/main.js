@@ -107,39 +107,66 @@ for (let i = 0; i < colors.length; i++) {
   console.log("Color: " + colors[i]);
 }
 // 21;
-sum=0;
-for(i=1;i<6;i++){
-  sum+=i
+sum = 0;
+for (i = 1; i < 6; i++) {
+  sum += i;
 }
 console.log(sum);
 // 22
-let product =1
-for(i=1;i<6;i++){
-  product+=i
+let product = 1;
+for (i = 1; i < 6; i++) {
+  product += i;
 }
 console.log(product);
 
 // 23
 let count = 0;
- arr = [1, 2, 3, 4, 5, 6, 7, 8];
- for(let i=0;i<=arr.length;i++){
-  if(i%2===0){
-  count++}
- }
- console.log(count);
+arr = [1, 2, 3, 4, 5, 6, 7, 8];
+for (let i = 0; i <= arr.length; i++) {
+  if (i % 2 === 0) {
+    count++;
+  }
+}
+console.log(count);
 //  24
 arr = [10, 5, 8, 12, 3];
 let largest = arr[0];
-for(let i=0;i<arr.length;i++){
-  if(largest<=arr[i]){largest=arr[i]}
-  else {largest=largest}
+for (let i = 0; i < arr.length; i++) {
+  if (largest <= arr[i]) {
+    largest = arr[i];
+  } else {
+    largest = largest;
+  }
 }
 console.log(largest);
-// 25 
-count=0;
+// 25
+count = 0;
 arr = [1, 2, 3, 4, 5, 6, 7, 8];
-for(let i=0;i<=arr.length;i++){
- if(i%2!==0){
- count++}
+for (let i = 0; i <= arr.length; i++) {
+  if (i % 2 !== 0) {
+    count++;
+  }
 }
 console.log(count);
+// 26
+function pattern(text) {
+  for (let i = 0; i < 5; i++) {
+    let stars = "";
+    for (let j = 0; j <= i; j++) {
+      stars += text;
+    }
+    console.log(stars);
+  }
+}
+
+pattern("*");
+
+// function makeMultTable(){
+//   for (let i=1;i<=10;i++){
+//     let row=""
+//     for(let j=0;j<=5;j++){
+//       let col
+//       row+=
+//     }
+//   }
+// }
