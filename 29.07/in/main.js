@@ -261,27 +261,23 @@ newArray(arr);
 // Example Output:
 // For matrix = [[1, 2, 3], [4, 5, 6]], output: [[1, 4], [2, 5], [3, 6]]
 
-// rowsAndColumns(arr){
-//   let row;
-//   let col;
-//   let arr_2 = [];
-//   for (let i = 0; i < arr.length; i++) {
-//     for (let j = 0; j < arr[i].length; j++) {
-//       if (arr[i][j]===arr[i][0]) {
-//         row = i;
-//         col = j;
-//         arr_2.push(arr[i][j]);
-//       }
-//     }
-//   }
+function rowsAndColumns(arr) {
+  let arr_2 = [];
+  for (let i = 0; i < arr[0].length; i++) {
+    let arr_3 = [];
+    for (let j = 0; j < arr.length; j++) {
+      arr_3.push(arr[j][i]);
+    }
+    arr_2.push(arr_3);
+  }
+  console.log(arr_2);
+}
 
-// }
-
-// let matrix = [
-//   [1, 2, 3],
-//   [4, 5, 6],
-// ];
-// rowsAndColumns(matrix)
+let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
+rowsAndColumns(matrix);
 
 // Exercise 11: Palindrome Check
 // Objective: Check if a given string is a palindrome.
@@ -365,26 +361,25 @@ isPalindrome(str, end);
 // Example Output:
 // For arr = [[3, 1, 2], [1, 4, 5], [2, 3, 1]], output: [[2, 3, 1], [3, 1, 2], [1, 4, 5]]
 
-function sumArr(arr_2){
-  sum=0;
-  for(i=0;i<arr_2.length;i++){
-    sum+=arr_2[i]
+function sumArr(arr_2) {
+  sum = 0;
+  for (i = 0; i < arr_2.length; i++) {
+    sum += arr_2[i];
   }
-  return sum
+  return sum;
 }
 
-
-function sortBySum(arr_1){
-let newArr=[]
-let total=0;
-let before=0;
-  for(j=0;j<=2;j++){
-total=sumArr(arr_1[j])
-points.sort(function(a, b){return a - b});
-
-
-}
-
+function sortBySum(arr_1) {
+  for (let i = 0; i < arr_1.length; i++) {
+    for (let j = 0; j < arr_1.length; j++) {
+      if (sumArr(arr_1[i]) <sumArr(arr_1[j])) {
+        let temp=arr_1[j]
+        arr_1[j]=arr_1[i]
+        arr_1[i]=temp
+      } 
+    }
+  }
+  console.log(arr_1);
 }
 
 arr = [
@@ -392,4 +387,4 @@ arr = [
   [1, 4, 5],
   [2, 3, 2],
 ];
-sortBySum(arr)
+sortBySum(arr);
