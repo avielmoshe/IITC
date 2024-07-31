@@ -372,11 +372,11 @@ function sumArr(arr_2) {
 function sortBySum(arr_1) {
   for (let i = 0; i < arr_1.length; i++) {
     for (let j = 0; j < arr_1.length; j++) {
-      if (sumArr(arr_1[i]) <sumArr(arr_1[j])) {
-        let temp=arr_1[j]
-        arr_1[j]=arr_1[i]
-        arr_1[i]=temp
-      } 
+      if (sumArr(arr_1[i]) < sumArr(arr_1[j])) {
+        let temp = arr_1[j];
+        arr_1[j] = arr_1[i];
+        arr_1[i] = temp;
+      }
     }
   }
   console.log(arr_1);
