@@ -75,19 +75,95 @@ let student = {
 student.calculateAverage();
 student.getLetterGrade();
 // 15
-let todoList={
-  task: ["made a diner","shoping",],
-  completedTasks:["homework","go to gym"],
-  addTask:function (task){
-     this.task.push(task)
+let todoList = {
+  task: ["made a diner", "shoping"],
+  completedTasks: ["homework", "go to gym"],
+  addTask: function (task) {
+    this.task.push(task);
   },
-  completeTask: function(task){
-    this.completeTask.push(task)
+  completeTask: function (word) {
+    this.task = this.task.filter(function check(check) {
+      return check !== word;
+    });
+
+    this.completedTasks.push(word);
   },
-  displayTasks:function (){
-  {
-      console.log(this.task)    
-  }
-}
-}
-todoList.displayTasks()
+  displayTasks: function () {
+    {
+      console.log(this.task);
+    }
+  },
+};
+todoList.displayTasks();
+todoList.completeTask("shoping");
+todoList.displayTasks();
+console.log(todoList.completedTasks);
+
+// 16
+let book = {
+  title: "IITC",
+  author: "omer mazig",
+  isbn: "111111",
+  isAvailable: true,
+  checkOut: function () {
+    if (this.isAvailable) {
+      console.log(`you checkout the book`);
+      this.isAvailable = false;
+    } else {
+      console.log(`you can't checkout the book beacuse it is unavailable`);
+    }
+  },
+  return: function () {
+    this.isAvailable = true;
+    console.log(`you return the book`);
+  },
+};
+book.checkOut();
+book.checkOut();
+book.return();
+book.checkOut();
+// 17
+// 18
+let tempConverter = {
+  celsius: 0,
+  fahrenheit: 0,
+  setc: function (temp) {
+    this.celsius = temp;
+    this.fahrenheit = (temp * 9) / 5 + 32;
+  },
+  setF: function (temp) {
+    this.fahrenheit = temp;
+    this.celsius = ((temp - 32) * 5) / 9;
+  },
+  getC: function () {
+    console.log(`the celsius is ${this.celsius}`);
+  },
+  getF: function () {
+    console.log(`the fahrenheit is ${this.fahrenheit}`);
+  },
+};
+tempConverter.setc(30);
+tempConverter.getF();
+
+// 19
+let pet = {
+  name: "nasrala",
+  type: "donkey",
+  hunger: 1,
+  happiness: 0,
+  feed: function (num) {
+    this.hunger++;
+  },
+  play: function (num) {
+    this.happiness++;
+  },
+  getStatus: function () {
+    console.log(
+      `${this.name} the ${this.type} is ${this.hunger} level of hunger and ${this.happiness} level of happiness`
+    );
+  },
+};
+pet.feed(1);
+pet.play(1);
+pet.getStatus();
+// 20
