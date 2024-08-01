@@ -7,8 +7,8 @@ function verify(entrPin, pinCode) {
   if (entrPin === pinCode) {
     alert("the pin code is " + true);
   } else {
- while(entrPin!==pinCode) {
-      conter ++;
+    while (entrPin !== pinCode) {
+      conter++;
       if (conter < 4) {
         entrPin = prompt("the pin code is " + false + " enter pincode");
         verify(entrPin, pinCode);
