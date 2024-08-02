@@ -167,3 +167,6 @@ pet.feed(1);
 pet.play(1);
 pet.getStatus();
 // 20
+let quiz = {
+  questions: [],
+};
