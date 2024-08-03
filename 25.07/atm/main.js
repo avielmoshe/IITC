@@ -1,6 +1,6 @@
-let balance = 20000;
-let pinCode = "3008";
-const maxWithdrawal = 10000;
+let balance = 3000;
+let pinCode = "5321";
+const maxWithdrawal = 11000;
 let conter = 0;
 
 function verify(entrPin, pinCode) {

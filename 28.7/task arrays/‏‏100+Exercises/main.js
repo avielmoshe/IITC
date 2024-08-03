@@ -249,3 +249,45 @@ function double(num) {
 }
 numbers.forEach(double);
 // 73
+
+// 81
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+numbers.filter(even);
+function even(num) {
+  return num % 2 === 0;
+}
+console.log(numbers.filter(even));
+// 82
+fruits = ["apple", "orenge", "banana", "watermelon"];
+fruits.filter(check);
+function check(len) {
+  return len.length > 5;
+}
+console.log(fruits.filter(check));
+// 84
+let arr_7 = [0, false, "false", "0", true, 1];
+function fal(ind) {
+  return ind !== false && ind !== 0 && ind !== NaN;
+}
+console.log(arr_7.filter(fal));
+// 85
+function isWord(word) {
+  return word.includes("apple");
+}
+
+console.log(fruits.filter(isWord));
+
+// 96
+numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+function sumOf(total, num) {
+  return (total += num);
+}
+console.log(numbers.reduce(sumOf, 0));
+// 97
+fruits = ["apple", "orenge", "banana", "watermelon"];
+
+// function longest(total,num){
+//   if(total.length>num.length){return total}
+//   else{total=num}
+// }
+// console.log(fruits.reduce(longest));

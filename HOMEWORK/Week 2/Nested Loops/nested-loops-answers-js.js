@@ -35,7 +35,7 @@ console.log("\nExercise 4:");
 for (let i = 0; i < 3; i++) {
   let row = "";
   for (let j = 0; j < 3; j++) {
-    row += (i + j) + " ";
+    row += i + j + " ";
   }
   console.log(row);
 }
@@ -45,7 +45,7 @@ console.log("\nExercise 5:");
 for (let i = 1; i <= 3; i++) {
   let row = "";
   for (let j = 1; j <= 3; j++) {
-    row += (i * j) + " ";
+    row += i * j + " ";
   }
   console.log(row);
 }
@@ -133,7 +133,7 @@ console.log("\nExercise 13:");
 for (let i = 0; i < 4; i++) {
   let row = "";
   for (let j = 0; j < 4; j++) {
-    row += ((i + j) % 2 === 0 ? "X " : "O ");
+    row += (i + j) % 2 === 0 ? "X " : "O ";
   }
   console.log(row);
 }
@@ -223,9 +223,14 @@ for (let i = 0; i < 3; i++) {
 // Exercise 21: Print a 4x4 grid of ascending numbers in a spiral pattern
 console.log("\nExercise 21:");
 let n = 4;
-let matrix = Array(n).fill().map(() => Array(n).fill(0));
+let matrix = Array(n)
+  .fill()
+  .map(() => Array(n).fill(0));
 let num = 1;
-let top = 0, bottom = n - 1, left = 0, right = n - 1;
+let top = 0,
+  bottom = n - 1,
+  left = 0,
+  right = n - 1;
 
 while (num <= n * n) {
   for (let i = left; i <= right; i++) matrix[top][i] = num++;
@@ -283,7 +288,7 @@ console.log("\nExercise 25:");
 for (let i = 0; i < 4; i++) {
   let row = "";
   for (let j = 0; j < 4; j++) {
-    row += (i * 2 + j) + " ";
+    row += i * 2 + j + " ";
   }
   console.log(row);
 }
@@ -329,7 +334,7 @@ console.log("\nExercise 29:");
 for (let i = 0; i < 5; i++) {
   let row = "";
   for (let j = 0; j < 5; j++) {
-    row += (i === j ? "1 " : "0 ");
+    row += i === j ? "1 " : "0 ";
   }
   console.log(row);
 }
@@ -339,7 +344,7 @@ console.log("\nExercise 30:");
 for (let i = 0; i < 4; i++) {
   let row = "";
   for (let j = 0; j < 4; j++) {
-    row += (i + j + 1) + " ";
+    row += i + j + 1 + " ";
   }
   console.log(row);
 }
