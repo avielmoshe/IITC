@@ -161,12 +161,52 @@ function pattern(text) {
 
 pattern("*");
 
-// function makeMultTable(){
-//   for (let i=1;i<=10;i++){
-//     let row=""
-//     for(let j=0;j<=5;j++){
-//       let col
-//       row+=
-//     }
-//   }
-// }
+// 27
+function copy() {
+  let row = "";
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j <= i; j++) {
+      row += "*";
+    }
+    row += "\n";
+  }
+  console.log(row);
+}
+copy();
+// 28
+function prit123() {
+  let row = "";
+  for (let i = 1; i <= 3; i++) {
+    for (let j = 1; j <= i; j++) {
+      row += j;
+    }
+    row += "\n";
+  }
+  console.log(row);
+}
+prit123();
+// 29
+function table() {
+  let row = "";
+  for (let i = 1; i <= 4; i++) {
+    for (let j = 1; j <= 4; j++) {
+      row += i * j + " ";
+    }
+    row += "\n";
+  }
+  console.log(row);
+}
+table();
+
+// 30
+function rowByRow() {
+  let row = "";
+  for (let i = 1; i <= 3; i++) {
+    for (let j = 1; j <= i; j++) {
+      row += i;
+    }
+    row += "\n";
+  }
+  console.log(row);
+}
+rowByRow();
