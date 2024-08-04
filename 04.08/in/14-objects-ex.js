@@ -111,19 +111,20 @@ let expensiveProduct = findMostExpensiveProduct(products);
 console.log("Most Expensive Product:", expensiveProduct);
 
 // TODO: Write a function to return an array of only available product sizes
-function getAvailableSizes(products) {
-  let newArr = [];
-  for (let i = 0; i < products.length; i++) {
-    for (let j = 0; j < products[i].sizes.length; j++) {
-      if (newArr[products[i].sizes[j]] === undefined) {
-        newArr.push(products[i].sizes[j]);
-      } else newArr[products[i].sizes[j]]++;
+function getAvailableSizes(product) {
+  let getAvailableSizes = [];
+  for (let i = 0; i < product.length; i++) {
+    for (let j = 0; j < product[i].sizes.length; j++) {
+      console.log(getAvailableSizes.includes(product[i].sizes[j]));
+      if (getAvailableSizes.includes(product[i].sizes[j])) {
+        getAvailableSizes.push(product[i].sizes[j]); //להוסיף אובייקט
+      }
     }
   }
+  console.log(getAvailableSizes);
 }
-
-let sizes = getAvailableSizes(products);
-console.log("Available Sizes:", sizes);
+getAvailableSizes(products);
+// console.log("Available Sizes:", getAvailableSizes(products));
 
 /////////////////////////////////////////////////////
 
@@ -180,19 +181,35 @@ let orders = [
 
 // TODO: Write a function to return an array of only delivered orders
 function getDeliveredOrders(orders) {
-  // your code here
+  let group = {};
+  for (let i = 0; i < orders.length; i++) {
+    if (orders[i].status === "delivered") {
+      if (group[orders[i].status] === undefined) {
+        group[orders[i].status] = [];
+      }
+      group[orders[i].status].push(orders[i]);
+    }
+  }
+  return group;
 }
-
-// let deliveredOrders = getDeliveredOrders(orders);
-// console.log("Delivered Orders:", deliveredOrders);
+getDeliveredOrders(orders);
+console.log("Delivered Orders:", getDeliveredOrders(orders));
 
 // TODO: Write a function to count the occurrences of each product in the orders
 function countProductOccurrences(orders) {
-  // your code here
+  let occurrences = {};
+  for (let i = 0; i < orders.length; i++) {
+    if (occurrences[orders[i].product] === undefined) {
+      occurrences[orders[i].product] = 1;
+    } else {
+      occurrences[orders[i].product]++;
+    }
+  }
+  return occurrences;
 }
 
-// let productCounts = countProductOccurrences(orders);
-// console.log("Product Counts:", productCounts);
+let productCounts = countProductOccurrences(orders);
+console.log("Product Counts:", productCounts);
 /*
   Output:
   {
