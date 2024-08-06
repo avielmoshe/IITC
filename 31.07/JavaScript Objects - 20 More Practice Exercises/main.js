@@ -170,3 +170,48 @@ pet.getStatus();
 let quiz = {
   questions: [],
 };
+
+// 21
+const inventory = {
+  items: [
+    { name: "weapon", quantity: 5 },
+    { name: "grenade", quantity: 2 },
+    { name: "knife", quantity: 3 },
+  ],
+  addItem: function (name, quantity) {
+    this.items.push({ name: name, quantity: quantity });
+  },
+  removeItem: function (name) {
+    for (let i = 0; i < this.items.length; i++) {
+      console.log(this.items[i].name);
+
+      if (this.items[i].name === name) {
+        this.items.splice(i, 1);
+      }
+    }
+  },
+};
+inventory.addItem("aviel", 10);
+console.log(inventory);
+inventory.removeItem("grenade");
+console.log(inventory);
+
+// 22
+const dice = {
+  sides: 6,
+  lastRoll: 4,
+  roll() {
+    let rollIs = Math.floor(Math.random() * this.sides + 1);
+    console.log(rollIs);
+
+    return (this.lastRoll = rollIs);
+  },
+};
+dice.roll();
+console.log(dice.lastRoll);
+dice.roll();
+// 23
+const wordCounter = {
+  text: "baba",
+  countWords() {},
+};

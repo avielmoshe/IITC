@@ -247,8 +247,58 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 function double(num) {
   console.log(num * 2);
 }
+
 numbers.forEach(double);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // 73
+function exs(item, index,arr){
+  item=arr[0]
+if(item===arr[index]){return arr[index]}
+}
+console.log(numbers.forEach(exs));
+               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 81
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];

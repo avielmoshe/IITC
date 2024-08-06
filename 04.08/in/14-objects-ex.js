@@ -68,7 +68,7 @@ let product = {
 
 // TODO: Write a function to toggle the product's availability
 function toggleAvailability(product) {
-  return product.isAvailable;
+  product.isAvailable = !product.isAvailable;
 }
 
 console.log("Updated Product:", toggleAvailability(product));
@@ -82,10 +82,14 @@ console.log("Updated Product:", product);
 
 // TODO: Write a function to remove a category from the product
 function removeCategory(product, category) {
-  product.categories.pop(category);
+  for (let i = 0; i < product.categories.length; i++) {
+    if (product.categories[i] === category) {
+      product.categories.splice(i, 1);
+    }
+  }
 }
 
-removeCategory(product, "tech");
+removeCategory(product, "computers");
 console.log("Updated Product:", product);
 
 /////////////////////////////////////////////////////
@@ -97,7 +101,7 @@ let products = [
 ];
 // TODO: Write a function to find the most expensive product
 function findMostExpensiveProduct(products) {
-  let mostExpensive = products[0].price;
+  let mostExpensive = 0;
   let productName = "Laptop";
   for (let i = 0; i < products.length; i++) {
     if (products[i].price > mostExpensive) {
@@ -111,19 +115,21 @@ let expensiveProduct = findMostExpensiveProduct(products);
 console.log("Most Expensive Product:", expensiveProduct);
 
 // TODO: Write a function to return an array of only available product sizes
-function getAvailableSizes(product) {
-  let getAvailableSizes = [];
-  for (let i = 0; i < product.length; i++) {
-    for (let j = 0; j < product[i].sizes.length; j++) {
-      console.log(getAvailableSizes.includes(product[i].sizes[j]));
-      if (getAvailableSizes.includes(product[i].sizes[j])) {
-        getAvailableSizes.push(product[i].sizes[j]); //להוסיף אובייקט
-      }
-    }
-  }
-  console.log(getAvailableSizes);
-}
-getAvailableSizes(products);
+// function getAvailableSizes(product) {
+//   let getAvailableSizes = [];
+//   for (let i = 0; i < product.length; i++) {
+//     if (product.isAvailable){
+//     for (let j = 0; j < product[i].sizes.length; j++) {
+//       if
+//       if (!getAvailableSizes.includes(product[i].sizes)) {
+//         getAvailableSizes.push(product[i].sizes[j]); //להוסיף אובייקט
+//       }
+//     }}
+//   }
+// return getAvailableSizes
+//  }
+// console.log(getAvailableSizes(products)
+// );
 // console.log("Available Sizes:", getAvailableSizes(products));
 
 /////////////////////////////////////////////////////
@@ -219,3 +225,11 @@ console.log("Product Counts:", productCounts);
     Monitor: 1
   }
   */
+
+
+ let  numbers=[1,2,3,4,5,6]
+ numbers.forEach((n,i)=>{
+  if(3===n){console.log(i);
+  }
+  
+})
