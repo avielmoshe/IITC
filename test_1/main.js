@@ -216,30 +216,16 @@ console.log("Uppercase Strings:", uppercaseStrings);
 // ];
 // TODO: Write a function to group strings by the number of spaces in the string.
 // The function should return an object where keys are the number of spaces and values are arrays of strings.
-
 function groupStringsBySpaces(strings) {
-  const newObj = {
-    0: [],
-    1: [],
-    2: [],
-  };
-
+  const answer = {};
   for (let i = 0; i < strings.length; i++) {
-    const myArray = strings[i].split(" ");
-    console.log(myArray);
-    if (myArray.length >= 4) {
-      newObj["3"].push(strings[i]);
-    } else if (myArray.length >= 3) {
-      newObj["2"].push(strings[i]);
-    } else if (myArray.length >= 2) {
-      newObj["1"].push(strings[i]);
-    } else if (myArray.length >= 1) {
-      newObj["0"].push(strings[i]);
+    if (!answer[strings[i].split(" ").length - 1]) {
+      answer[strings[i].split(" ").length - 1] = [];
     }
+    answer[strings[i].split(" ").length - 1].push(strings[i]);
   }
-  return newObj;
+  return answer;
 }
-
 const groupedStrings_1 = groupStringsBySpaces(strings);
 console.log("Grouped Strings By Spaces:", groupedStrings_1);
 
@@ -254,11 +240,8 @@ function groupStringsByLength(strings) {
     if (group[strings[i].length] === undefined) {
       group[strings[i].length] = [];
     }
-    for (let j = 0; j < strings.length; j++) {
-      if (strings[j].length === strings[i].length) {
-        group[strings[i].length].push(strings[i]);
-      }
-    }
+
+    group[strings[i].length].push(strings[i]);
   }
   return group;
 }
@@ -286,3 +269,8 @@ function capitalizeStrings(strings) {
 
 const capitalizedStrings = capitalizeStrings(strings);
 console.log("Capitalized Strings:", capitalizedStrings);
+let x = 7,
+  y = 7,
+  z = 7;
+
+console.log(x, y, z);
