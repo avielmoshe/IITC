@@ -23,18 +23,19 @@ body{
     border-top-left-radius:5px 
 }
 img{
-    width: 290px;
+    width: 100%;
     display: block;
-    z-index: -1;
     max-width: 100%;
     border-top-right-radius:5px ;
     border-top-left-radius:5px 
 }
-main{
-    
+.des{
+    display: none;
+}
 
-    height: 100vh;
-    width: 290px;
+main{
+
+  margin-inline: 32px;
     margin-block: 62px;
     background-color: hsl(244, 38%, 16%); 
     display: flex;
@@ -74,3 +75,25 @@ margin: 32px;
     gap: 32px;
 
 }
+
+@media (min-width:900px){
+    main{
+        flex-direction: row-reverse;
+    }
+    .card{
+        flex-direction: row;
+        gap: 16px;
+  
+    }
+  
+    .des{
+        display: block;
+    }
+    .mobile{
+        display: none;
+    }
+
+}
+
+
+
