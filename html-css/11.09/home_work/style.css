@@ -76,7 +76,7 @@ margin: 32px;
 
 }
 
-@media (min-width:900px){
+@media (min-width:880px){
     main{
         flex-direction: row-reverse;
     }
