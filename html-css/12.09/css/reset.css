@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+margin-bottom: 1rem;
+}
+
+html ,body{
+
+    height: auto;
+}
+img{
+    display: block;
+max-width: 100%;
+}

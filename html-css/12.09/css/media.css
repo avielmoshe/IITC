@@ -1,0 +1,17 @@
+
+@media (min-width:800px ){
+
+    article{
+    border-radius: 1rem;
+    margin-block:4rem ;
+    height: fit-content;
+    }
+    img{
+    padding: 2rem;}
+    
+    
+    body{
+        background-color: var(--color-bgr-stone);}
+    
+    }
+    
