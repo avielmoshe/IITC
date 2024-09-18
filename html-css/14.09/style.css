@@ -1,0 +1,144 @@
+@font-face {
+    font-family:Fraunces ;
+    src: url(./font/Fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf);
+}
+@font-face {
+    font-family:Montserrat ;
+    src: url(./font/monts/Montserrat-VariableFont_wght.ttf);
+}
+:root{
+    --Dark-cyan: hsl(158, 36%, 37%);
+    --Dark-200-cyan: hsl(158, 36%, 20%);
+    --Cream: hsl(30, 38%, 92%);
+--Very-dark-blue: hsl(212, 21%, 14%);
+--Dark-grayish-blue: hsl(228, 12%, 48%);
+--White: hsl(0, 0%, 100%);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    max-width: 100%;
+}
+.top-img-desc{
+    display: none;
+}
+body{
+    color: var(--Very-dark-blue);
+    font-family:Montserrat ;
+
+    background-color: var(--Cream);
+display: flex;
+justify-content: center;
+font-size: 14px;
+}
+main{
+    display: flex;
+    flex-direction: column ;
+    border-radius: 10px;
+    margin-block: 2rem;
+    background-color: var(--White);
+    overflow: hidden;
+    max-width: 325px;
+    height: fit-content;
+}
+article{
+    padding: 1.5rem;
+
+}
+article >*{
+    margin-bottom: 1.5rem;
+}
+.head{
+text-transform: uppercase;
+letter-spacing: 0.2rem;
+margin-bottom: 0.65rem;
+
+}
+h1{
+    font-family:Fraunces ;
+    font-weight: 700;
+font-size: 2rem;
+line-height: 2rem;
+}
+.cont{
+    font-weight: 400;
+}
+.prices{
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+
+}
+.new-price{
+    font-size: 2rem;
+    font-family:Fraunces ;
+font-weight: 700;
+color: var(--Dark-cyan)
+
+}
+.button-continer{
+display: flex;
+justify-content: center;
+
+}
+button{
+    padding-inline:5.5rem;
+    padding-block: 1rem;
+    border-radius: 10px;
+    border: 0;
+    background-color: var(--Dark-cyan);
+    color: var(--White);
+    font-weight: 600;
+    cursor: pointer;
+    display:inline-flex;
+
+
+}
+
+button::before{
+    margin-right: 0.5rem;
+    background-image: url(./images/icon-cart.svg);
+    content: "";
+    height: 15px;
+    width: 16px;
+}
+button:hover{
+    background-color: var(--Dark-200-cyan)
+}
+
+@media (min-width:800px){
+main{
+    flex-direction: row;
+    max-width: 600px;
+    margin-block: auto;
+}
+.top-img-desc{
+    display: block;
+}
+.top-img-mobile{
+    display: none;
+}
+.item{
+    flex: 1;
+}
+article{
+    max-width: 300px;
+}
+button{
+    padding-inline:4.5rem;
+}
+h1{
+    font-size: 2.1rem;
+}
+}
