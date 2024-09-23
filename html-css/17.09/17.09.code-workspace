@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../IITC-Full-Stack-3-in-class-/frontend-vanilla/DOM/DOM-samples"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "17.09"
+	}
+}
