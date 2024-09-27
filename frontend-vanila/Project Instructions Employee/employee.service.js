@@ -1,7 +1,8 @@
 import { utils } from "./utils.js";
-
 const EMPLOYEE_STORAGE_KEY = "employee";
 let gEmployees = utils.getFromStorage(EMPLOYEE_STORAGE_KEY) || [];
+
+const employeesForm = document.getElementById("employees-form");
 
 function addEmployee(event) {
   event.preventDefault();
@@ -63,17 +64,6 @@ function saveEmployee(row) {
   });
   utils.saveToStorage(EMPLOYEE_STORAGE_KEY, gEmployees);
 }
-
-const employeesForm = document.getElementById("employees-form");
-employeesForm.addEventListener("submit", addEmployee);
-const salaryInputMin = document.getElementById("salary-filter-min");
-const salaryValueMin = document.getElementById("salary-value-min");
-const salaryInputMax = document.getElementById("salary-filter-max");
-const salaryValueMax = document.getElementById("salary-value-max");
-const ageValue = document.getElementById("age-value");
-const ageInput = document.getElementById("age-filter");
-const filterBut = document.getElementById("Filter");
-const getAllBtn = document.getElementById("get-all");
 
 function clearFilter() {
   document.getElementById("firstName-filter").value = "";
