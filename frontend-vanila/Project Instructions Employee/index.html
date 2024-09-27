@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1> Employee Management Application</h1>
+    <table id="Employees-table">
+        <thead>
+            <tr>
+                <th>firstName</th>
+                <th>lastName</th>
+                <th>age</th>
+                <th>start date</th>
+                <th>department</th>
+                <th>salary</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+
+        </tbody>
+        <tfoot>
+            <tr>
+
+                <td>total employees</td>
+                <td id="amount">0</td>
+            </tr>
+        </tfoot>
+    </table>
+    <hr>
+</div>
+
+    <form id="employees-form">
+        <h3>Add new employees</h3>
+        <label for="firstName">firstName</label>
+        <input
+        id="firstName"
+        type="text"
+        placeholder="Enter firstName"
+        required
+        />
+        
+        <label for="lastName">lastName</label>
+        
+        <input
+        id="lastName"
+        type="text"
+        placeholder="Enter lastName"
+        required
+        />
+        <label for="age">age</label>
+        <input
+        id="age"
+        type="number"
+        placeholder="Enter age"
+        required
+        />
+        <label for="department">department</label>
+        <select id="department">
+            <option value=""></option>
+            <option value="Marketing">Marketing</option>
+            <option value="Sales">Sales</option>
+            <option value="IT">IT</option>
+            <option value="Finance">Finance</option>
+            <option value="HR">HR</option>
+            <option value="Operations">Operations</option>
+            <option value="Logistics">Logistics</option>
+        </select>
+        <label for="salary">salary</label>
+        <input
+        id="salary"
+        type="string"
+        placeholder="Enter salary"
+        required
+        />
+        <label for="startDate">start date</label>
+        <input
+        id="startDate"
+        type="date"
+        placeholder="Enter start date"
+      required
+      />
+      
+      <button>Add employee</button>
+    </form>
+    
+    
+    <aside>
+        <div>
+            <label for="firstName-filter">firstName</label>
+            <input
+            id="firstName-filter"
+            type="text"
+            placeholder="Enter firstName"
+            />
+        </div>
+        <div>
+            <label for="lastName-filter">lastName</label>
+            <input
+            id="lastName-filter"
+            type="text"
+            placeholder="Enter lastName"
+            required
+            />
+        </div>
+        <div>
+            <label for="age-filter">Age</label>
+            <input type="range" id="age-filter" min="16" max="70" value="0" step="1">
+            <span id="age-value"></span>
+        </div>
+        <div>
+            <label for="department-filter">department</label>
+            <select id="department-filter">
+                <option value=""></option>
+                <option value="Marketing">Marketing</option>
+                <option value="Sales">Sales</option>
+                <option value="IT">IT</option>
+                <option value="Finance">Finance</option>
+                <option value="HR">HR</option>
+                <option value="Operations">Operations</option>
+                <option value="Logistics">Logistics</option>
+            </select>
+        </div>
+        <div>
+            <label for="salary-filter-min">Min salary</label>
+            <input type="range" id="salary-filter-min" min="0" max="100000" value="0" step="1000">
+            <span id="salary-value-min"></span>
+        </div>
+        <div>
+            <label for="salary-filter-max">Max salary</label>
+            <input type="range" id="salary-filter-max" min="0" max="99000" value="99000" step="1000">
+            <span id="salary-value-max"></span>
+        </div>
+        <button id="Filter">Filter</button> 
+        <button id="get-all">Get all</button> 
+    </aside>
+
+    
+    <script type="module" src="controller.js"></script>
+</body>
+
+</html>

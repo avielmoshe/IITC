@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+}
+body{
+position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container{
+    position: relative;
+    padding-left: 200px;
+
+}
+.h1{
+    margin-block: 8px;
+}
+
+#employees-form{
+    display: flex;
+    flex-direction: column;
+    max-width: 360px;
+    align-items: center;
+    gap:8px;
+    
+}
+button{
+    border-radius:10px ;
+    border: none;
+    cursor: pointer;
+    width: 65px;
+    height: 30px;
+    margin-inline:4px ;
+}
+form button{
+    width: 120px;
+}
+#startDate{
+    cursor: pointer;
+
+}
+aside{
+    background-color: blueviolet;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    padding: 16px;
+    width: 150px;
+    height: 100%;
+}
+aside input{
+    width:100px;
+}
+aside div{
+    margin-block: 32px
+}
+.input-edit{
+    width: 70px;
+}
