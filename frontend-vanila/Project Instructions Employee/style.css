@@ -1,64 +1,183 @@
-*{
+
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html,body{
-    height: 100%;
-}
-body{
-position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.container{
-    position: relative;
-    padding-left: 200px;
 
-}
-.h1{
-    margin-block: 8px;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    display: grid;
+    grid-template-columns: 1fr
 }
 
-#employees-form{
+.container {
     display: flex;
-    flex-direction: column;
-    max-width: 360px;
-    align-items: center;
-    gap:8px;
+flex-direction: column;
+justify-content: center;
+ margin-top: 20px;
+; padding: 4px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 20px;
+    text-align: center;
+    color: #4CAF50;
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 12px;
     
 }
-button{
-    border-radius:10px ;
-    border: none;
-    cursor: pointer;
-    width: 65px;
-    height: 30px;
-    margin-inline:4px ;
+
+thead {
+    background: #4CAF50;
+    color: white;
 }
-form button{
-    width: 120px;
+
+th, td {
+    padding-block: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
-#startDate{
-    cursor: pointer;
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+form {
+    background: #e7f3fe;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+form h3 {
+    margin-bottom: 15px;
+    color: #31708f;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+#salary{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #4CAF50;
+}
+.container button{
+    font-size: 10px;
+    padding: 8px;
 
 }
-aside{
-    background-color: blueviolet;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    padding: 16px;
-    width: 150px;
-    height: 100%;
+
+button {
+    margin-inline: 4px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
 }
-aside input{
-    width:100px;
+
+button:hover {
+    background-color: #45a049;
 }
-aside div{
-    margin-block: 32px
+
+aside {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding:4px;
+    padding-left: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-.input-edit{
-    width: 70px;
+
+aside div {
+    margin-bottom: 15px;
+}
+
+
+
+@media (min-width:620px) {
+    table {
+        font-size:12px;
+    }
+    th, td {
+        padding: 12px;
+    
+    }
+    .container button{
+        font-size: 12px;
+        padding: 8px;
+    
+    }
+}
+@media (min-width:768px) {
+body{
+    grid-template-columns: 1fr 1fr
+
+}
+h1{
+    font-size: 32px;
+}
+
+    table {
+        font-size:14px;
+    }
+    .container{
+        grid-column: 1/3;
+        grid-row:3/1 ;
+    
+    
+    }
+
+    .container button{
+        font-size: 14px;
+        padding: 10px;
+    
+    }
+}
+@media (min-width:1032px) {
+    body{
+        grid-template-columns: 1fr 4fr 1fr
+    
+    }
+    .container{
+        grid-column: 2/3;
+    }
+    aside {
+        grid-column: 1/2;
+
+    }
 }
