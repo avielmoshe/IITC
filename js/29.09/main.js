@@ -134,3 +134,31 @@ console.log(nestedArray.flat());
 const deeplyNestedArray = [1, [2, [3, [4, [5]]]]];
 console.log(deeplyNestedArray.flat(Infinity));
 // 41
+const ab = ["א", "ב", "ג", "ד"];
+ab.forEach((str, index) => console.log(str + " " + index));
+// 42
+const arr = [10, 20, 30, 40];
+const result = arr.map((value, index) => ({
+  index: index,
+  value: value,
+}));
+
+console.log(result);
+// 43
+const fruits4 = ["תפוח", "בננה", "אבטיח", "תמר"];
+
+const result1 = fruits4.filter((fruit) => fruit.includes("א"));
+
+console.log(result1);
+// 44
+const arr1 = ["א", "ב", "א", "ג", "ב", "א"];
+
+const result2 = arr1.reduce((acc, curr) => {
+  acc[curr] = acc[curr] ? acc[curr] + 1 : 1;
+  return acc;
+}, {});
+
+console.log(result2);
+// 45
+const arr3 = ["שלום", "עולם", "ג'אווהסקריפט"];
+console.log(arr3.some((str) => str.includes("ז")));

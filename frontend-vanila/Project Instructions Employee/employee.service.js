@@ -1,4 +1,3 @@
-import { utils } from "./utils.js";
 const EMPLOYEE_STORAGE_KEY = "employee";
 let gEmployees = utils.getFromStorage(EMPLOYEE_STORAGE_KEY) || [];
 

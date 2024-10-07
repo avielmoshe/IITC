@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login">
+        <form id="pin-code">
+         <h1>enter your pin code</h1>
+         <label for="pinCode">Enter your pin code</label>
+         <input id="pinCode" type="text" required placeholder="enter pin code">
+         <button>connect</button>
+        </form>
+    </div>
+    <div id="btnAction" class="hidden">
+        <div id="choose-action">
+            <h1>choose action</h1>
+            <button id="withdraw">withdrawal</button>
+            <button id="deposit">deposit</button>
+            <button id="balance">check balance</button>
+            <button id="lastTransaction">Last Transaction</button>
+            <button id="changePinCode">Change pin code</button>
+        </div>
+    </div>
+    <div class="container">
+        <div id="withdrawEl" class="hidden">
+            <h1>
+                Withdraw
+            </h1>
+            <form id="WithdrawForm">
+                <input placeholder="How much do you need?" required type="number"  min="0">
+                <button type="submit">Withdraw</button>
+                <p id="isWithdrawSucceeded"></p>
+            </form>
+        </div>
+        <div id="depositEl" class="hidden">
+            <h1>
+                Deposit
+            </h1>
+            <form id="depositForm">
+                <input placeholder="How much do we get?" required type="number" min="0">
+                <button type="submit">Deposit</button>
+                <p id="isDepositSucceeded"></p>
+
+            </form>
+        </div>
+        <div id="balanceEl" class="hidden">
+            <h1>
+                Balance
+            </h1>
+            <p id="userBalance"></p>
+        </div>
+        <div id="lastTransactionEl" class="hidden">
+            <h1>
+                Last Transaction
+            </h1>
+            <p id="lastTransactionP"></p>
+        </div>
+        <div id="changePinCodeEl" class="hidden">
+            <h1>
+                Change your pin code
+            </h1>
+            <form id="changePinCodeForm">
+                <label for="old-pin-code">old pin code</label>
+                <input id="old-pin-code" placeholder="Enter old pin code" required type="text"  >
+                <label for="new-pin-code">new pin code</label>
+                <input id="new-pin-code" placeholder="Enter new pin code" required type="text"  >
+                <button type="submit">Change</button>
+                <p id="isPinCodeChange"></p>
+            </form>
+        </div>
+    </div>
+    <button class="hidden" id="Exit">Exit account</button>
+
+    <script type="module" src="controller.js"></script>
+</body>
+</html>

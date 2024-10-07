@@ -20,7 +20,7 @@ body {
 flex-direction: column;
 justify-content: center;
  margin-top: 20px;
-; padding: 4px;
+ padding: 4px;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -78,6 +78,7 @@ label {
     border-radius: 5px;
     transition: border-color 0.3s;
 }
+
 input[type="text"],
 input[type="number"],
 input[type="date"],
@@ -96,7 +97,6 @@ input:focus, select:focus {
 .container button{
     font-size: 10px;
     padding: 8px;
-
 }
 
 button {
