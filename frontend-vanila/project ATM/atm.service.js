@@ -3,9 +3,9 @@ const USER_TRANSACTIONS_KEY = "userTransactions";
 const PIN_CODE_KEY = "pinCode";
 const BALANCE_KEY = "balance";
 
-let pinCode = utils.getFromStorage(PIN_CODE_KEY);
-let balance = utils.getFromStorage(BALANCE_KEY);
-const userTransactions = utils.getFromStorage(USER_TRANSACTIONS_KEY);
+let pinCode = utils.getFromStorage(PIN_CODE_KEY) || "1234";
+let balance = utils.getFromStorage(BALANCE_KEY) || 0;
+const userTransactions = utils.getFromStorage(USER_TRANSACTIONS_KEY) || {};
 let counter = 0;
 const pinCodeForm = document.getElementById("pin-code");
 const buttonsEl = document.getElementById("btnAction");
