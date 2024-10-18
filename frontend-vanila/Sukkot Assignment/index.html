@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>  
+    <nav>
+    <a href="./index.html"><img src="./IMDB_Logo_2016.svg.png"  alt=""></a>
+        <a href="about.html">About</a>
+        <div id="favorites">Favorites</div>
+        <div id="topRating">Top rated</div>
+        <div class="searchWhenItBig">
+            <input id="search" type="text" placeholder="search for a movie">
+            <button id="searchByTitle">Search</button>
+        </div>
+    </nav>
+    <main>
+    
+      
+        <div class="continer-moviePage"></div>
+        <div class="caroisel-center">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="image-item">
+                        <img src="https://image.tmdb.org/t/p/w500/yDHYTfA3R0jFYba16jBB1ef8oIt.jpg" alt="">
+                    </div>
+                    <div class="image-item">
+                        <img src="https://image.tmdb.org/t/p/w500/p5ozvmdgsmbWe0H8Xk7Rc8SCwAB.jpg" alt="">
+                    </div>
+                    <div class="image-item">
+                        <img src="https://image.tmdb.org/t/p/w500/tncbMvfV0V07UZozXdBEq4Wu9HH.jpg" alt="">
+                    </div>
+                </div>
+                <button class="carousel-button prev-button">&lt;</button>
+                <button class="carousel-button next-button">&gt;</button>
+            </div>
+        </div>
+        <div class="search-bar">
+            <div class="searchWhenItSmall">
+                <input id="search" type="text" placeholder="search for a movie">
+                <button id="searchByTitle">Search</button>
+                </div>
+            <div class="continer-searchById">
+                <input id="inById" type="text" placeholder="Search by Id">
+                <button id="searchBtn">Search</button>
+            </div>
+        </div>
+                    <div class="searchById"></div>
+                    <div class="continer-pages">
+                        <button value="1" class="currnent-page">1</button>
+                        <button value="2">2</button>
+                        <button value="3">3</button>
+                        <button value="4">4</button>
+                        <button value="5">5</button>
+                        <button value="6">6</button>
+                        <button value="7">7</button>
+                        <button value="8">8</button>
+                        <button value="9">9</button>
+                        <button value="10">10</button>
+                    </div>
+                <div class="continer"> </div>
+    
+    </main>
+    <footer>
+                <p>&copy; 2024 Movie Website | Created by <a href="https://www.example.com" target="_blank">Aviel Moshe</a></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+@font-face {
+    font-family:Overpass ;
+    src: url(./Overpass/static/Overpass-Regular.ttf);
+}
+:root{
+--background--color: rgb(0, 0, 0);
+--nav--bar:rgb(39, 38, 35);
+--web-color:rgb(231, 180, 40);
+
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.about-section {
+    padding: 60px 20px;
+    background-color: var(--web-color);
+}
+
+.about-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    color: #555;
+}
+
+.creator-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.creator-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+
+.creator-text h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.creator-text p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 600px;
+}
