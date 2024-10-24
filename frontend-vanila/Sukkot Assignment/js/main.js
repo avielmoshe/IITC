@@ -1,6 +1,8 @@
 import { API_KEY } from "./API-KEY.js";
 import { utils } from "./utils.js";
-const KET_STORAGE = "favoritesListOfData";
+
+// catch all the elements from the html with dom
+
 const continerEl = document.querySelector(".continer");
 const continerMoviePageEl = document.querySelector(".continer-moviePage");
 const continersearchByIdEl = document.querySelector(".searchById");
@@ -13,12 +15,21 @@ const carousel = document.querySelector(".carousel");
 const carouselItems = document.querySelectorAll(".image-item");
 const continerCurrnetPageEl = document.querySelector(".continer-pages");
 const btnCurrentPage = continerCurrnetPageEl.querySelectorAll("button");
-let currentIndex = 0;
+const errorPageEl = document.querySelector(".errorPage");
+const searchPhoneSizeEl = document.querySelector(".searchWhenItSmall");
+const btnByTitlePhoneSize = searchPhoneSizeEl.querySelector("#searchByTitle");
+// global data
+
+const KET_STORAGE = "favoritesListOfData";
 const favoritesListOfData = utils.getFromStorage(KET_STORAGE) || [];
+let currentIndex = 0;
 let onFavorites = false;
+let isOnHomePage = true;
 let currentPagePopular = 1;
 let currentPageRated = 1;
-let isOnHomePage = true;
+
+// get data from API
+
 const getPopularMovie = async () => {
   try {
     const response = await axios.get(
@@ -48,7 +59,7 @@ const getMovieById = async (movieID) => {
     );
     return response.data; //חשוב
   } catch (error) {
-    console.error(error.message);
+    renderErrorPage();
   }
 };
 
@@ -62,6 +73,8 @@ const getMovieByTitle = async (movieTitle) => {
     console.error(error.message);
   }
 };
+
+//addEventListener
 
 favoritesEl.addEventListener("click", async () => {
   continerCurrnetPageEl.classList.add("hidden");
@@ -79,11 +92,54 @@ topRatingEl.addEventListener("click", () => {
 });
 
 btnByTitle.addEventListener("click", () => {
+  continerCurrnetPageEl.classList.add("hidden");
   SearchByTitle(document.getElementById("search").value);
   document.getElementById("search").value = "";
 });
+btnByTitlePhoneSize.addEventListener("click", () => {
+  continerCurrnetPageEl.classList.add("hidden");
+  SearchByTitle(searchPhoneSizeEl.querySelector("#search").value);
+  searchPhoneSizeEl.querySelector("#search").value = "";
+});
+
+searchButton.addEventListener("click", async function () {
+  carouselEL.innerHTML = "";
+  continerCurrnetPageEl.classList.add("hidden");
+  const searchValue = document.getElementById("inById").value;
+  const data = [];
+  data.push(await getMovieById(searchValue));
+  if (await getMovieById(searchValue)) {
+    renderMovieHomePage(data);
+  }
+  document.getElementById("inById").value = "";
+});
+
+document.querySelector(".next-button").addEventListener("click", () => {
+  currentIndex =
+    currentIndex === carouselItems.length - 1 ? 0 : currentIndex + 1;
+  updateCarousel();
+});
+
+document.querySelector(".prev-button").addEventListener("click", () => {
+  currentIndex =
+    currentIndex === 0 ? carouselItems.length - 1 : currentIndex - 1;
+  updateCarousel();
+});
+
+// all the function
+
+function renderErrorPage() {
+  continerCurrnetPageEl.classList.add("hidden");
+  continerMoviePageEl.innerHTML = "";
+  continersearchByIdEl.innerHTML = "";
+  continerEl.innerHTML = "";
+  errorPageEl.innerHTML = `<div>
+  <p>You have searched for an unidentified ID, please try a different one</p>
+  </div>`;
+}
 
 function renderMovieHomePage(data) {
+  errorPageEl.innerHTML = "";
   continerMoviePageEl.innerHTML = "";
   continersearchByIdEl.innerHTML = "";
   continerEl.innerHTML = "";
@@ -114,6 +170,7 @@ function renderMovieHomePage(data) {
 }
 
 async function renderMoviePage(movieId) {
+  errorPageEl.innerHTML = "";
   continersearchByIdEl.innerHTML = "";
   continerMoviePageEl.innerHTML = "";
   const data = await getMovieById(movieId); //חשוב
@@ -154,15 +211,6 @@ const renderFavorites = () => {
   onFavorites = true;
 };
 
-searchButton.addEventListener("click", async function () {
-  carouselEL.innerHTML = "";
-  const searchValue = document.getElementById("inById").value;
-  const data = [];
-  data.push(await getMovieById(searchValue));
-  renderMovieHomePage(data);
-  document.getElementById("inById").value = "";
-});
-
 async function SearchByTitle(title) {
   carouselEL.innerHTML = "";
   const data = await getMovieByTitle(title);
@@ -172,18 +220,6 @@ async function SearchByTitle(title) {
 const updateCarousel = () => {
   carousel.style.transform = `translateX(${-currentIndex * 100}%)`;
 };
-
-document.querySelector(".next-button").addEventListener("click", () => {
-  currentIndex =
-    currentIndex === carouselItems.length - 1 ? 0 : currentIndex + 1;
-  updateCarousel();
-});
-
-document.querySelector(".prev-button").addEventListener("click", () => {
-  currentIndex =
-    currentIndex === 0 ? carouselItems.length - 1 : currentIndex - 1;
-  updateCarousel();
-});
 
 btnCurrentPage.forEach((btn) => {
   btn.addEventListener("click", (ev) => {
@@ -200,4 +236,7 @@ btnCurrentPage.forEach((btn) => {
     }
   });
 });
+
+// render the home page
+
 getPopularMovie();
