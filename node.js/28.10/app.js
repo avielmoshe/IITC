@@ -1,4 +1,5 @@
 import express from "express";
+import morgan from "morgan";
 import jokes from "./db/jokes.json" assert { type: "json" };
 import names from "./db/names.json" assert { type: "json" };
 import products from "./db/products.json" assert { type: "json" };
@@ -7,7 +8,7 @@ import fs from "fs/promises";
 const app = express();
 const PORT = 3000;
 app.use(express.json());
-
+app.use(morgan("combined"));
 //check if the server work
 app.get("/api/status", (req, res) => {
   res.send({ status: "server is running" });
@@ -144,33 +145,27 @@ app.patch("/api/product/:id", (req, res) => {
 //delete by id
 app.delete("/api/joke/:id", (req, res) => {
   const id = +req.params["id"];
-  const jokeIndex = jokes.findIndex((joke) => joke.id === id);
-  if (jokeIndex === -1) {
-    return res.send({ error: "Joke not found" });
+  if (deleteById(id, jokes)) {
+    res.send({ error: "joke not found" });
   }
-  jokes.splice(jokeIndex, 1);
   fs.writeFile("db/jokes.json", JSON.stringify(jokes, null, 2));
   res.send({ message: "removed successfully", remainJokes: jokes });
 });
 
 app.delete("/api/name/:id", (req, res) => {
   const id = +req.params["id"];
-  const nameIndex = names.findIndex((name) => name.id === id);
-  if (nameIndex === -1) {
-    return res.send({ error: "name not found" });
+  if (deleteById(id, names)) {
+    res.send({ error: "name not found" });
   }
-  names.splice(nameIndex, 1);
   fs.writeFile("db/names.json", JSON.stringify(names, null, 2));
   res.send({ message: "removed successfully", remainNames: names });
 });
 
 app.delete("/api/product/:id", (req, res) => {
   const id = +req.params["id"];
-  const productIndex = products.findIndex((product) => product.id === id);
-  if (productIndex === -1) {
-    return res.send({ error: "product not found" });
+  if (deleteById(id, products)) {
+    res.send({ error: "product not found" });
   }
-  products.splice(productIndex, 1);
   fs.writeFile("db/products.json", JSON.stringify(products, null, 2));
   res.send({
     message: "removed successfully",
@@ -178,6 +173,14 @@ app.delete("/api/product/:id", (req, res) => {
   });
 });
 
+//general delete
+function deleteById(id, db) {
+  const dbIndex = db.findIndex((currentObg) => currentObg.id === id);
+  if (dbIndex === -1) {
+    return true;
+  }
+  db.splice(dbIndex, 1);
+}
 //
 app.listen(3000, () => {
   console.log(`server is running on port ${PORT}`);
