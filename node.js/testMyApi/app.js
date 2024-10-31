@@ -3,7 +3,7 @@ import morgan from "morgan";
 import logRequest from "./middleware/logger.js";
 import jokesRoutes from "./routes/jokesRoute.js";
 import namesRoutes from "./routes/usersRoute.js";
-// import productsRoutes from "./routes/productsRoute.js";
+import productsRoutes from "./routes/productsRoute.js";
 import mongoose from "mongoose";
 // import authUser from "./middleware/auth.js";
 
@@ -32,7 +32,7 @@ app.use("/api/joke", jokesRoutes);
 
 app.use("/api/name", namesRoutes);
 
-// app.use("/api/product", productsRoutes);
+app.use("/api/product", productsRoutes);
 
 //
 app.listen(PORT, () => {

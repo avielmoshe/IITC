@@ -5,50 +5,100 @@ import Product from "../models/productModel.js";
 const router = express.Router();
 // router.use(authUser);
 
-router.get("/", (req, res) => {
-  res.send(names);
-});
-
-router.get("/random", (req, res) => {
-  const randomProducts = products[Math.floor(Math.random() * products.length)];
-  res.send(randomProducts);
-});
-
-router.get("/:id", (req, res) => {
-  const id = +req.params["id"];
-  const data = products.find((product) => product.id === id);
-  if (data) {
-    res.send(data);
-  }
-  res.send({
-    error: "error",
-  });
-});
-
-router.post("/name", (req, res) => {
-  const newName = req.body;
-  names.push(newName);
-  fs.writeFile("db/names.json", JSON.stringify(names, null, 2), (err) => {
-    if (err) {
-      console.error(err);
+router.get("/", async (req, res) => {
+  try {
+    const products = await Product.find({});
+    if (!products.length) {
+      return res.status(404).send({
+        mes: "add new products to see the list",
+      });
     }
-    console.log("file created");
-  });
-  res.send({ message: "name added", newName: newName, names: names });
+    res.status(201).send(products);
+  } catch (error) {
+    res.status(500).send("UnKnow server error");
+  }
 });
 
-router.patch("/:id", (req, res) => {
-  const id = +req.params["id"];
-  const productIndex = products.findIndex((product) => product.id === id);
-  if (productIndex === -1) {
-    return res.send({ error: "product not found" });
+router.get("/random", async (req, res) => {
+  try {
+    const product = await Product.find({});
+    const randomProduct = await Product.aggregate([
+      {
+        $sample: {
+          size: 1,
+        },
+      },
+    ]);
+    res.status(201).send(randomProduct[0]);
+  } catch (error) {
+    res.status(500).send("UnKnow server error");
   }
-  products[productIndex] = { ...req.body };
-  fs.writeFile("db/products.json", JSON.stringify(products, null, 2));
-  res.send({
-    message: "name updated successfully",
-    product: products[productIndex],
+});
+
+router.get("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const product = await Product.findById(id);
+    if (!product) {
+      return res.status(404).send({ error: "Id not found" });
+    }
+    res.status(201).send(product);
+  } catch (error) {
+    console.error("Error finding product by ID:", error);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+router.post("/", async (req, res) => {
+  const { name, price } = req.body;
+  if (!name || !price) {
+    return res.status(400).send({ error: "product is required" });
+  }
+  const newProduct = new Product({
+    name: req.body.name,
+    price: req.body.price,
   });
+  await newProduct.save();
+  res.status(201).send({
+    msg: "new product added!",
+    newProduct,
+  });
+});
+
+router.patch("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updatedProduct = await Product.findByIdAndUpdate(id, req.body, {
+      new: true,
+    });
+    if (!updatedProduct) {
+      return res.status(404).send({ error: "Product not found" });
+    }
+    res.status(201).send({
+      message: "Product updated successfully",
+      product: updatedProduct,
+    });
+  } catch (error) {
+    console.error("Error updating Product by ID:", error);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedProduct = await Product.findByIdAndDelete(id);
+    if (!deletedProduct) {
+      return res.status(404).json({ error: "product not found" });
+    }
+    res.json({
+      message: "name deleted successfully",
+      productThatRemoved: deletedProduct,
+    });
+  } catch (error) {
+    console.error("Error deleting product by ID:", error);
+    res.status(500).json({ error: "Server error" });
+  }
 });
 
 export default router;
