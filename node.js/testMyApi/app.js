@@ -5,6 +5,7 @@ import jokesRoutes from "./routes/jokesRoute.js";
 import namesRoutes from "./routes/usersRoute.js";
 import productsRoutes from "./routes/productsRoute.js";
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 // import authUser from "./middleware/auth.js";
 
 const app = express();
@@ -12,9 +13,9 @@ const PORT = 3000;
 app.use(express.json());
 app.use(morgan("tiny"));
 app.use(logRequest);
+dotenv.config();
 
-const uri =
-  "mongodb+srv://mosheavieli:153759Mas@cluster0.1geou.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = process.env.DB_URI;
 mongoose.connect(uri).then(() => {
   console.log("connected");
 });
