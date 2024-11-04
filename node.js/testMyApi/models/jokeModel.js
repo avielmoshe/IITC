@@ -5,6 +5,11 @@ const jokeSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Name",
+    required: true,
+  },
 });
 
 export default mongoose.model("Joke", jokeSchema);

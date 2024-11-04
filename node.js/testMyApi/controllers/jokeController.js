@@ -2,7 +2,7 @@ import Joke from "../models/jokeModel.js";
 
 export const getAllJoke = async (req, res) => {
   try {
-    const jokes = await Joke.find({});
+    const jokes = await Joke.find({}).populate("createdBy");
     if (!jokes.length) {
       return res.status(404).send({
         mes: "add new joke to see the jokes",
@@ -56,6 +56,7 @@ export const createNewJoke = async (req, res) => {
   }
   const newJoke = new Joke({
     joke: req.body.joke,
+    createdBy: req.body.createdBy,
   });
   await newJoke.save();
   res.status(201).send({
