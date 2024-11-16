@@ -1,0 +1,40 @@
+@font-face{
+    font-family: young-serif;
+    src: url(../../../public/fonts/young-serif/YoungSerif-Regular.ttf);
+}
+@font-face{
+    font-family: Outfit;
+    src: url(../../../public/fonts/outfit/static/Outfit-Regular.ttf);
+}
+
+
+.main-container{
+    font-family: Outfit; 
+    background-color: var(--color-bgr-article);
+    max-width: 800px;
+    font-size:1rem;
+}
+span {
+    font-weight: 700;
+}
+
+ul li::marker{
+    color: var(--Stone-600-text);
+    font-weight: bold;
+}
+
+ul li span{
+    margin-left:1rem ;
+}
+
+
+
+@media (min-width:800px ){
+
+    .main-container{
+    border-radius: 1rem;
+    margin-block:4rem ;
+    height: fit-content;
+    }
+ 
+}

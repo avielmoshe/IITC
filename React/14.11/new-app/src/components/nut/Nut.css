@@ -1,0 +1,14 @@
+.table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px; 
+  }
+  .table div {
+margin: 0;
+  }
+  .table hr {
+    grid-column: 1 / -1; 
+    border: 0;
+    border: 1px solid var(--Stone-150);
+    margin: 10px 0; 
+  }

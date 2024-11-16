@@ -1,0 +1,11 @@
+.headOfPrep{
+    font-family: Outfit; 
+    font-size:1.2rem;
+    color: var(--Rose-800-h-card);
+    font-weight: 700;
+}
+
+.prepTime{
+    background-color: var(--Rose-50-bgr-card);
+    padding: 1.3rem;
+}

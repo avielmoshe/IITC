@@ -1,0 +1,7 @@
+ol li::marker{
+    color: var(--Stone-600-text);
+    font-weight: bold;
+}
+ol li span{
+    margin-left:1rem ;
+}

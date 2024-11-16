@@ -1,0 +1,40 @@
+:root{
+    --color-bgr-article: hsl(0, 0%, 100%);
+    --color-bgr-stone:hsl(30, 18%, 87%);
+    --color-800-h-color:hsl(14, 45%, 36%);
+    --Stone-150: hsl(30, 18%, 87%);
+    --Stone-600-text: hsl(30, 10%, 34%);
+    --Stone-900-h1: hsl(24, 5%, 18%);
+    --Rose-800-h-card: hsl(332, 51%, 32%);
+    --Rose-50-bgr-card: hsl(330, 100%, 98%);
+    }
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+margin-bottom: 1rem;
+}
+
+html ,body{
+    height: 100%;
+}
+
+img{
+    display: block;
+max-width: 100%;
+}
+
+body{
+    background-color:var(--color-bgr-stone);
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width:800px ){
+    img{
+        padding: 2rem;}
+    body{
+        background-color: var(--color-bgr-stone);}
+    
+    }
+    

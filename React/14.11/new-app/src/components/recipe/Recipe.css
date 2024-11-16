@@ -1,0 +1,18 @@
+.recipe{
+    padding: 2rem;
+    color: var(--Stone-600-text);
+}
+
+hr{
+    margin-block: 1.5rem;
+    border: 1px solid var(--Stone-150);
+}
+
+.h-color{
+    font-family: young-serif;
+    font-size: 1.7rem;
+    color: var(--color-800-h-color); 
+    font-weight: 500 ;
+    margin-bottom:1.5rem
+}
+
