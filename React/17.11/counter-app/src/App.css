@@ -1,0 +1,33 @@
+*{
+color: green;
+}
+.counter-container{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 50px;
+  align-items: center;
+}
+
+button{
+  background-color: green;
+  color: aliceblue;
+  font-size: 25px;
+border: 0;
+border-radius: 10px;
+width: 50px;
+height: 50px;
+cursor: pointer;
+box-shadow: 0 7px 20px black;
+
+}
+button:hover{
+background-color: black;
+box-shadow: 0 7px 20px green;
+
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+}
