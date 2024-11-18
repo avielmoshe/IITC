@@ -1,0 +1,15 @@
+.thankYou{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.result{
+    color: var(--Orange);
+    background-color: var(--Dark-Blue-back);
+    padding-inline: 1rem;
+    border-radius: 1.5rem;
+    padding-block: 0.5rem;
+    font-weight: 400;
+}

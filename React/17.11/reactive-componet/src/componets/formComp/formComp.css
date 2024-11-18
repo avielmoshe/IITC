@@ -1,0 +1,7 @@
+span{
+    font-size:40px;
+    border: 2px solid green;
+    border-radius: 10px;
+    margin-inline: 2rem;
+    cursor: pointer;
+}

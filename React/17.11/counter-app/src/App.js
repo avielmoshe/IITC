@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState } from "react";
+import ChildComp from "./components/ChildComp.jsx";
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -18,6 +19,7 @@ function App() {
         <p>{counter}</p>
         <button onClick={addToCurrentCount}>+</button>
       </div>
+      <ChildComp title="Maccabi haifa" description="1913" />
     </div>
   );
 }
