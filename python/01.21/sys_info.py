@@ -32,6 +32,8 @@ def get_machine_info():
     print(f"User: {os.getlogin()}")
     print(f"Home Directory: {os.path.expanduser('~')}")
     print("="*50)
-
 if __name__ == "__main__":
     get_machine_info()
+
+    if True:
+        print("hello word")
